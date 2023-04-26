@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    class PddSet {
+      items = {}
+      add(element) {
+        if (!this.has(element)) {
+          this.items[element] = element
+          return true
+        }
+        return false
+      }
+      delete(element) {
+        if (!this.has(element)) {
+          delete this.items[element]
+          return true
+        }
+        return false
+      }
+      has(element) {
+        return element in this.items
+      }
+      clear() {
+        this.items = {}
+      }
+      size() {
+        Object.keys(this.items).length
+      }
+      values() {
+        return Object.values(this.items)
+      }
+    }
+    let list = new PddSet()
+    let arr = [1, 2, 3, 4, 5, 6]
+    arr.forEach(item => {
+      list.add(item)
+    })
+    console.log(list.values());
+  </script>
+  <script>
+  </script>
+</body>
+
+</html>
